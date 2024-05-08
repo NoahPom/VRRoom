@@ -21,7 +21,6 @@ public class PopScript : MonoBehaviour
         Vector3 targetPosition = new Vector3(transform.position.x, height, transform.position.z);
         if (Vector3.Distance(transform.position, PlayerTrans.transform.position) < activeDistance)
         {
-            print("YEEES");
             height = activeHeight;
         }
         else
