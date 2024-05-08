@@ -7,6 +7,7 @@ public class NoClipScript : MonoBehaviour
     // Start is called before the first frame update
     public Transform teleportLocation;
     public GameObject playerObject;
+    public GameObject handModel;
     void Start()
     {
         
@@ -17,11 +18,12 @@ public class NoClipScript : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.name == "VR Hand")
+        print("Colliding");
+        if (other.gameObject == handModel)
         {
-            print("COllide");
+            print("Colliding Hand");
             playerObject.transform.position = teleportLocation.transform.position;
         }
     }
