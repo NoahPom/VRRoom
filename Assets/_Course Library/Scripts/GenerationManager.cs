@@ -92,26 +92,31 @@ public class GenerationManager : MonoBehaviour
             {
                 Vector3 spawnPosition = new Vector3(x * tileSize, 0, z * tileSize) + chunk.transform.position;
                 int gridIndex = Random.Range(0, gridTier1.Length);
-                if (chunk.transform.position == transform.position && Time.time < 10)
+                int randomRot = 0;
+                for (int i = 0; i < Random.Range(0, 3); i++)
                 {
-                    Instantiate(spawngridPrefab, spawnPosition, Quaternion.identity, chunk.transform);
+                    randomRot += 90;
+                }
+                    if (chunk.transform.position == transform.position && Time.time < 10)
+                {
+                    Instantiate(spawngridPrefab, spawnPosition, Quaternion.Euler(0, randomRot, 0), chunk.transform);
                 }
                 else
                 {
                     if (difficultyTier == 1)
                     {
                         gridIndex = Random.Range(0, gridTier1.Length);
-                        Instantiate(gridTier1[gridIndex], spawnPosition, Quaternion.identity, chunk.transform);
+                        Instantiate(gridTier1[gridIndex], spawnPosition, Quaternion.Euler(0, randomRot, 0), chunk.transform);
                     }
                     if (difficultyTier == 2)
                     {
                         gridIndex = Random.Range(0, gridTier2.Length);
-                        Instantiate(gridTier2[gridIndex], spawnPosition, Quaternion.identity, chunk.transform);
+                        Instantiate(gridTier2[gridIndex], spawnPosition, Quaternion.Euler(0, randomRot, 0), chunk.transform);
                     }
                     if (difficultyTier >= 3)
                     {
                         gridIndex = Random.Range(0, gridTier3.Length);
-                        Instantiate(gridTier3[gridIndex], spawnPosition, Quaternion.identity, chunk.transform);
+                        Instantiate(gridTier3[gridIndex], spawnPosition, Quaternion.Euler(0, randomRot, 0), chunk.transform);
                     }
                 }
             }
