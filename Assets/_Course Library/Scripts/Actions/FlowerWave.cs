@@ -22,7 +22,7 @@ public class FlowerWave : MonoBehaviour
         edit2 = Random.Range(3 * intensity, 15 * intensity);
         edit3 = Random.Range(0.5f * intensity, 2.5f * intensity);
         edit4 = Random.Range(1.5f * intensity, 7.5f * intensity);
-        edit1 = Random.Range(1 * intensity, 5 * intensity);
+        edit5 = Random.Range(1 * intensity, 5 * intensity);
         edit6 = Random.Range(3 * intensity, 15 * intensity);
     }
 
