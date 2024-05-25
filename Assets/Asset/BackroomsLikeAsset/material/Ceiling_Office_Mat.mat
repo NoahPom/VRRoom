@@ -72,7 +72,7 @@ Material:
     - _CustomColor: 1
     - _DstBlend: 0
     - _Metallic: 0
-    - _Normal_Strength: 1
+    - _Normal_Strength: 2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
